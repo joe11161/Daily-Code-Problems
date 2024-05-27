@@ -1,26 +1,23 @@
-<!-- This problem was asked by Google.
+<?php
+/* This problem was asked by Google.
 
 Given two strings A and B, return whether or not A can be shifted some number of times to get B.
 
-For example, if A is abcde and B is cdeab, return true. If A is abc and B is acb, return false. -->
+For example, if A is abcde and B is cdeab, return true. If A is abc and B is acb, return false.*/
 
-
-
-<?php
 //solution A
- function stringtoArray($delimiter, $string,$compare) {
- 	$array =explode($delimiter, $string);
-    $len = count($array);
-    switch (true){
+function stringtoArray($delimiter, $string,$compare) {
+  $array =explode($delimiter, $string);
+  $len = count($array);
+  switch (true){
     	case ($len === 0):
         	echo "Please add a string";
-            break;
-        case ($len >= 2):              
+         break;
+     case ($len >= 2):              
          if($len === 2){
-         	$val1 = [$array[1], $array[0]];
-            $val2 = implode($val1);         
-           $test = ($val2==$compare)? true :false;
-           
+         	 $val1 = [$array[1], $array[0]];
+           $val2 = implode($val1);         
+           $test = ($val2==$compare)? true :false;           
            return $test;
          }
     }
@@ -41,18 +38,17 @@ class stringToArray{
         $array =explode($delimiter, $string);
     $len = count($array);
     switch (true){
-    	case ($len === 0):
-        	echo "Please add a string";
-            break;
-        case ($len >= 2):              
+     case ($len === 0):
+        echo "Please add a string";
+        break;
+      case ($len >= 2):              
          if($len === 2){
-         	$val1 = [$array[1], $array[0]];
-            $val2 = implode($val1);         
+         	 $val1 = [$array[1], $array[0]];
+           $val2 = implode($val1);         
            $test = ($val2==$compare)? true :false;
-        var_dump($test);           
-         }
-       
-    }
+           var_dump($test);       
+         }      
+     }
     }
 }
 
@@ -60,8 +56,7 @@ $string1= "ab,cde";
 $string2= "a,bc";
 $delimiter = ",";
 $compare1= "cdeab";
-$compare2= "bca";
-
+$compare2= "acb";
 new stringToArray($string1, $delimiter, $compare1);
-var_dump(stringtoArray($delimiter, $string1, $compare1));
-?>
+var_dump(stringtoArray($delimiter, $string2, $compare2));
+
